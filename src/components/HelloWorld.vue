@@ -56,7 +56,7 @@ const photos = [
     class="mySwiper"
   >
     <SwiperSlide v-for="(photo, i) in photos" :key="i">
-      <img :src="`src/assets/${photo}`" alt="">
+      <img :src="`@/assets/${photo}`" alt="">
     </SwiperSlide>
   </Swiper>
 </template>
