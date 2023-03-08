@@ -11,14 +11,10 @@ import 'swiper/css/navigation';
 import "swiper/css/zoom";
 
 const photos = [
-  'IMG_0044-3.JPG',
-  'IMG_0051.JPG',
-  'IMG_0054-3.JPG',
-  'IMG_0057-2.JPG',
-  'IMG_0059-3.JPG',
-  'IMG_0063.JPG',
-  'IMG_0066-2.JPG',
-  'IMG_0070-2.JPG',
+  'jess08.JPG',
+  'jess11.JPG',
+  'jess12.JPG',
+  'jess13.JPG',
 ]
 
 // defineProps({
