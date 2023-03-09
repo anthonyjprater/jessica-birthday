@@ -1,21 +1,32 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Pagination, EffectCoverflow, Navigation, Zoom } from 'swiper';
+import { FreeMode, Navigation, Thumbs } from 'swiper';
 
 // Import Swiper Styles
 import 'swiper/css';
 
-import 'swiper/css/pagination';
-import "swiper/css/effect-coverflow";
+import "swiper/css/thumbs"
+import "swiper/css/free-mode"
+// import 'swiper/css/pagination';
+// import "swiper/css/effect-coverflow";
 import 'swiper/css/navigation';
-import "swiper/css/zoom";
+// import "swiper/css/zoom";
 
-const photos = [
-  'jess08.JPG',
-  'jess11.JPG',
-  'jess12.JPG',
-  'jess13.JPG',
+const photos = [  
+  'jess0.JPG',
+  'jess10.JPG',
+  'jess20.JPG',
+  'jess30.JPG',
+  'jess60.JPG',
+  'jess80.JPG',
+  'jess89.JPG',
+  'jess100.JPG'
 ]
+let thumbsSwiper = null;
+
+const setThumbsSwiper = (swiper) => {
+  thumbsSwiper = swiper;
+}
 
 // defineProps({
 //   msg: {
@@ -27,32 +38,30 @@ const photos = [
 
 <template>
 <Swiper
-    :effect="'coverflow'"
-    :zoom="true"
-    :grabCursor="true"
-    :centeredSlides="true"
-    :slidesPerView="'auto'"
-    :coverflowEffect="{
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    }"
-    :spaceBetween="30"
-    :autoplay="{
-      delay: 2500,
-      disableOnInteraction: false,
-    }"
-    :pagination="{
-      clickable: true,
-    }"
+    :loop="true"
+    :spaceBetween="10"
     :navigation="true"
-    :modules="[Autoplay, Pagination, Navigation, EffectCoverflow, Zoom]"
-    class="mySwiper"
+    :thumbs="{ swiper: thumbsSwiper }"
+    :modules="[FreeMode, Navigation, Thumbs]"
+    class="mySwiper2"
   >
     <SwiperSlide v-for="(photo, i) in photos" :key="i">
-      <img :src="`@/assets/${photo}`" alt="">
+      <img :src="`../assets/${photo}`" alt="">
+    </SwiperSlide>
+  </Swiper>
+
+  <Swiper
+    @swiper="setThumbsSwiper"
+    :loop="true"
+    :spaceBetween="10"
+    :slidesPerView="4"
+    :freeMode="true"
+    :watchSlidesProgress="true"
+    :modules="[FreeMode, Navigation, Thumbs]"
+    class="mySwiper"
+  >
+    <SwiperSlide class="thumb-nav" v-for="(photo, i) in photos" :key="i">
+      <img :src="`../assets/${photo}`" alt="">
     </SwiperSlide>
   </Swiper>
 </template>
@@ -63,7 +72,7 @@ const photos = [
 
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 75%;
 }
 
 .swiper-slide {
@@ -81,15 +90,33 @@ const photos = [
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: scale-down;
+  background: #000;
+}
+
+/* .swiper-wrapper.thumb-nav {
+  height: 20%;
+} */
+.thumb-nav img {
   object-fit: cover;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.mySwiper2 div.swiper-button-next,
+.mySwiper2 div.swiper-button-prev {
   color: #c0c;
 }
 
-@media (min-width: 1024px) {
+.mySwiper {
+  height: 10%;
+}
 
+.mySwiper2 {
+  min-height: 500px;
+}
+
+@media (min-width: 1024px) {
+  .swiper {
+    height: 100%;
+  }
 }
 </style>
