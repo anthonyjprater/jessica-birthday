@@ -13,15 +13,24 @@ import 'swiper/css/navigation';
 // import "swiper/css/zoom";
 
 const photos = [  
-  'jess0.JPG',
-  'jess10.JPG',
-  'jess20.JPG',
-  'jess30.JPG',
-  'jess60.JPG',
-  'jess80.JPG',
-  'jess89.JPG',
-  'jess100.JPG'
+  '../assets/jess0.JPG',
+  '../assets/jess10.JPG',
+  '../assets/jess20.JPG',
+  '../assets/jess30.JPG',
+  '../assets/jess60.JPG',
+  '../assets/jess80.JPG',
+  '../assets/jess89.JPG',
+  '../assets/jess100.JPG'
 ]
+
+const images = photos.map(photo => getFullUrl(photo))
+
+console.log(images)
+
+function getFullUrl(relativeUrl) {
+  return new URL(relativeUrl, import.meta.url).href
+}
+
 let thumbsSwiper = null;
 
 const setThumbsSwiper = (swiper) => {
@@ -45,8 +54,8 @@ const setThumbsSwiper = (swiper) => {
     :modules="[FreeMode, Navigation, Thumbs]"
     class="mySwiper2"
   >
-    <SwiperSlide v-for="(photo, i) in photos" :key="i">
-      <img :src="`../assets/${photo}`" alt="">
+    <SwiperSlide v-for="(photo, i) in images" :key="i">
+      <img :src="`${photo}`" alt="">
     </SwiperSlide>
   </Swiper>
 
@@ -60,8 +69,8 @@ const setThumbsSwiper = (swiper) => {
     :modules="[FreeMode, Navigation, Thumbs]"
     class="mySwiper"
   >
-    <SwiperSlide class="thumb-nav" v-for="(photo, i) in photos" :key="i">
-      <img :src="`../assets/${photo}`" alt="">
+    <SwiperSlide class="thumb-nav" v-for="(photo, i) in images" :key="i">
+      <img :src="`${photo}`" alt="">
     </SwiperSlide>
   </Swiper>
 </template>

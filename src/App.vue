@@ -36,6 +36,7 @@ header {
   align-items: center;
   font-family: 'Nightmare', cursive;
   letter-spacing: 2px;
+  padding: 0 0 2rem;
 }
 
 .logo {
@@ -47,6 +48,7 @@ header {
 @media (min-width: 1024px) {
   header {
     font-size: 2rem;
+    padding: 0;
   }
 
   .logo {
