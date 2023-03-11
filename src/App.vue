@@ -5,9 +5,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img class="logo" src="../assets/christmas-jack.png" alt=""/>
+    <img class="logo" src="./assets/christmas-jack.png" alt=""/>
       <h1>Happy Birthday Jessica</h1>
-    <img class="logo" src="../assets/jack-face.png" alt=""/>
+    <img class="logo" src="./assets/jack-face.png" alt=""/>
   </header>
   <HelloWorld />
   <!-- <RouterView /> -->
