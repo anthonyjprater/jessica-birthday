@@ -28,7 +28,7 @@ const images = photos.map(photo => getFullUrl(photo))
 console.log(images)
 
 function getFullUrl(relativeUrl) {
-  return new URL(relativeUrl, import.meta.url).href
+  return new URL(relativeUrl, import.meta.url)
 }
 
 let thumbsSwiper = null;
@@ -55,7 +55,7 @@ const setThumbsSwiper = (swiper) => {
     class="mySwiper2"
   >
     <SwiperSlide v-for="(photo, i) in images" :key="i">
-      <img :src="`${photo}`" alt="">
+      <img :src="`${photo}`" alt="image">
     </SwiperSlide>
   </Swiper>
 
@@ -70,7 +70,7 @@ const setThumbsSwiper = (swiper) => {
     class="mySwiper"
   >
     <SwiperSlide class="thumb-nav" v-for="(photo, i) in images" :key="i">
-      <img :src="`${photo}`" alt="">
+      <img :src="`${photo}`" alt="thumbnail image">
     </SwiperSlide>
   </Swiper>
 </template>
