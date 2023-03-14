@@ -13,14 +13,14 @@ import 'swiper/css/navigation';
 // import "swiper/css/zoom";
 
 const photos = [  
-  './assets/jess0.JPG',
-  './assets/jess10.JPG',
-  './assets/jess20.JPG',
-  './assets/jess30.JPG',
-  './assets/jess60.JPG',
-  './assets/jess80.JPG',
-  './assets/jess89.JPG',
-  './assets/jess100.JPG'
+  '../assets/jess0.JPG',
+  '../assets/jess10.JPG',
+  '../assets/jess20.JPG',
+  '../assets/jess30.JPG',
+  '../assets/jess60.JPG',
+  '../assets/jess80.JPG',
+  '../assets/jess89.JPG',
+  '../assets/jess100.JPG'
 ]
 
 const images = photos.map(photo => getFullUrl(photo))
