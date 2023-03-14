@@ -55,7 +55,9 @@ const setThumbsSwiper = (swiper) => {
     class="mySwiper2"
   >
     <SwiperSlide v-for="(photo, i) in images" :key="i">
-      <img :src="`${photo}`" alt="image">
+      <a href="https://www.flickr.com/photos/197860396@N07/albums/72177720306614441" target="_blank">
+        <img :src="`${photo}`" alt="image">
+      </a>
     </SwiperSlide>
   </Swiper>
 
@@ -81,19 +83,20 @@ const setThumbsSwiper = (swiper) => {
 
 .swiper {
   width: 100%;
-  height: 75%;
+  height: 65%;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #000;
 
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .swiper-slide img {
   display: block;
