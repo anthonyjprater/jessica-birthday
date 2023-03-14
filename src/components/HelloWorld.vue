@@ -23,13 +23,13 @@ const photos = [
   'assets/jess100.JPG'
 ]
 
-const images = photos.map(photo => getFullUrl(photo))
+const images = photos.map(photo => photo)
 
 console.log(images)
 
-function getFullUrl(relativeUrl) {
-  return new URL(relativeUrl, import.meta.url).href
-}
+// function getFullUrl(relativeUrl) {
+//   return new URL(relativeUrl, import.meta.url).href
+// }
 
 let thumbsSwiper = null;
 
