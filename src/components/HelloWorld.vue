@@ -13,23 +13,23 @@ import 'swiper/css/navigation';
 // import "swiper/css/zoom";
 
 const photos = [  
-  'assets/jess0.JPG',
-  'assets/jess10.JPG',
-  'assets/jess20.JPG',
-  'assets/jess30.JPG',
-  'assets/jess60.JPG',
-  'assets/jess80.JPG',
-  'assets/jess89.JPG',
-  'assets/jess100.JPG'
+  '/src/assets/jess0.JPG',
+  '/src/assets/jess10.JPG',
+  '/src/assets/jess20.JPG',
+  '/src/assets/jess30.JPG',
+  '/src/assets/jess60.JPG',
+  '/src/assets/jess80.JPG',
+  '/src/assets/jess89.JPG',
+  '/src/assets/jess100.JPG'
 ]
 
-const images = photos.map(photo => photo)
+const images = photos.map(photo => getFullUrl(photo))
 
 console.log(images)
 
-// function getFullUrl(relativeUrl) {
-//   return new URL(relativeUrl, import.meta.url).href
-// }
+function getFullUrl(relativeUrl) {
+  return new URL(relativeUrl, import.meta.url).href
+}
 
 let thumbsSwiper = null;
 
